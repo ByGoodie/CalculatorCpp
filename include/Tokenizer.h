@@ -1,16 +1,16 @@
 #include <string>
 #include <fstream>
-#include <stringstream>
+#include <sstream>
 
-template <class Stream>
+template <class StreamT>
 class Tokenizer {
 public:
-	Tokenizer(Stream &source);
+	Tokenizer(StreamT &source);
 
 	std::pair<std::string, char> getCurrentToken(const std::string& delimiters);
 
 private:
-	S &m_source;
+	StreamT &m_source;
 };
 
 #include "../src/Tokenizer.inl"
